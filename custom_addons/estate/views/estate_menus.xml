@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- root menu -->
+    <menuitem 
+        id="estate_menu_root" 
+        name="Estate Management" 
+        sequence="10"/>
+
+    <!-- First Level Menu -->
+    <menuitem 
+        id="estate_menu_properties" 
+        name="Properties" 
+        parent="estate_menu_root"
+        action="estate_property_action" 
+        sequence="10"/>
+
+    <!-- Property Types Menu -->
+    <menuitem id="menu_estate_property_type"
+              name="Property Types"
+              parent="estate_menu_root"
+              action="action_estate_property_type"/>
+
+    <!-- Property Offers Menu -->
+    <menuitem id="menu_estate_property_offer"
+              name="Property Offers"
+              parent="estate_menu_root"
+              action="action_estate_property_offer"/>
+
+    <!-- Property Tags Menu -->
+    <menuitem id="menu_estate_property_tag"
+              name="Property Tags"
+              parent="estate_menu_root"
+              action="action_estate_property_tag"/>
+</odoo>
