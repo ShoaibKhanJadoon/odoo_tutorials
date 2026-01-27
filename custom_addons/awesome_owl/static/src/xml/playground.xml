@@ -1,0 +1,59 @@
+<templates xml:space="preserve">
+    <t t-name="awesome_owl.Playground">
+        <div class="h-100 overflow-y-auto p-2">
+
+            <div class="p-4 pb-0">
+                <h1>Welcome to the OWL Playground!</h1>
+            </div>
+            <div>
+                <h3 class="m-1">Counter Component</h3>
+            </div>
+            <div class="m-1">
+                <Counter/>
+            </div>
+            <div class="m-1">
+                <Counter/>
+            </div>
+            <div>
+                <h3 class="m-1">Card Component</h3>
+            </div>
+            <div class="m-1">
+                <Card title="'First Card'" content="'This is the first card'"/>
+            </div>
+            <div class="m-1">
+                <Card title="'Second Card'" content="'This is the second card'"/>
+            </div>
+
+            <div class="p-3">
+                <h3>Markup Demo</h3>
+
+                <Card title="'Escaped Content'" content="html"/>
+                <Card title="'Markup Content'" content="safeHtml"/>
+            </div>
+
+            <div class="p-4">
+
+                <h3>Counters with sum</h3>
+
+                <Counter onChange.bind="incrementSum"/>
+                <Counter onChange.bind="incrementSum"/>
+
+                <hr/>
+
+                <h4>Total Sum:</h4>
+                <strong t-out="state.sum"/>
+            </div>
+            
+            <div class="p-4">
+                <h3>Todo List Component</h3>
+                <TodoList/>
+            </div>
+            <div class="p-3">
+                <Card title="'Generic Counter'">
+                    <Counter/>
+                </Card>
+            </div>
+
+        </div>
+    </t>
+</templates>
