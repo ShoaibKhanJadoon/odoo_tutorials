@@ -1,0 +1,13 @@
+.o_dashboard {
+    background-color: #f2f2f2;
+    min-height: 100%;
+    overflow-y: auto;           
+    padding-right: 8px;        
+}
+
+.dashboard-item {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    min-height: 10rem;
+}

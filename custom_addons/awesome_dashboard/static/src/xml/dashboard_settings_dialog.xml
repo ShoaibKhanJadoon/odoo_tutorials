@@ -1,0 +1,23 @@
+<templates xml:space="preserve">
+  <t t-name="awesome_dashboard.DashboardSettingsDialog">
+    <Dialog title="'Dashboard Settings'">
+      <div class="p-3">
+        <t t-foreach="props.items" t-as="item" t-key="item.id">
+          <label class="d-flex align-items-center gap-2 mb-2">
+            <input
+              type="checkbox"
+              t-model="state.checked[item.id]"
+            />
+            <t t-out="item.description"/>
+          </label>
+        </t>
+      </div>
+
+      <t t-slot="footer">
+        <button class="btn btn-primary" t-on-click="apply">
+          Apply
+        </button>
+      </t>
+    </Dialog>
+  </t>
+</templates>
