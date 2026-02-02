@@ -1,0 +1,66 @@
+<template xml:space="preserve">
+    <t t-name="clicker_game.ClickerSystrayItem" owl="1">
+        <div class="dropdown">
+            <!-- Main Button -->
+            <button 
+                class="btn btn-outline-success d-flex align-items-center gap-2 rounded-pill px-3 shadow-sm" 
+                type="button" 
+                id="dropdownMenuButton1" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+                title="Clicker Game Stats"
+                style="height: 100%; padding: 0 4px; font-size: 13px; line-height: 1;"
+            >
+                <i class="fa fa-mouse-pointer" title="Clicks"></i>
+                <span><t t-out="clicker.state.clicks"/> Clicks</span>
+
+                <span class="vr mx-2"></span>
+
+                <i class="fa fa-tree text-success" title="Trees"></i>
+                <span><t t-out="clicker.totalTrees"/> Trees</span>
+
+                <span class="vr mx-2"></span>
+
+                <i class="fa fa-apple-whole text-danger" title="Fruits"></i>
+                <span><t t-out="clicker.totalFruits"/> Fruits</span>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul class="dropdown-menu p-3 shadow-lg border-0 rounded-3" aria-labelledby="dropdownMenuButton1" style="min-width: 260px;">
+                <li class="dropdown-header text-center fw-bold text-success mb-2">
+                    🌱 Clicker Game Stats
+                </li>
+
+                <li class="d-flex justify-content-between align-items-center px-2 py-1">
+                    <span class="fw-semibold ">Clicks</span>
+                    <span class="badge bg-primary"><t t-out="clicker.state.clicks"/></span>
+                </li>
+
+                <li class="d-flex justify-content-between align-items-center px-2 py-1">
+                    <span class="fw-semibold ">Trees</span>
+                    <span class="badge bg-success"><t t-out="clicker.totalTrees"/></span>
+                </li>
+
+                <li class="d-flex justify-content-between align-items-center px-2 py-1 mb-2 border-bottom pb-2">
+                    <span class="fw-semibold ">Fruits</span>
+                    <span class="badge bg-danger"><t t-out="clicker.totalFruits"/></span>
+                </li>
+
+                <li class="d-flex flex-column gap-2 pt-2">
+                    <button 
+                        class="btn btn-sm btn-outline-primary w-100 rounded-pill" 
+                        t-on-click="openClicker"
+                    >
+                        🎮 Open Clicker Game
+                    </button>
+                    <button 
+                        class="btn btn-sm btn-outline-warning w-100 rounded-pill" 
+                        t-on-click="buyClickbot"
+                    >
+                        🤖 Buy Clickbot
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </t>
+</template>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="clicker_game.ClickValue">
+        <!-- The tooltip shows the real number, while text shows the humanized number -->
+        <h3
+            t-att-data-tooltip="clicker.state.clicks"
+            t-out="clicker.humanizedClicks"
+            class="text-success fw-bold mb-0"
+        />
+    </t>
+</templates>

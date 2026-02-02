@@ -1,0 +1,25 @@
+.o_clicker_client_action {
+    height: 100%;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    scroll-behavior: smooth;
+}
+
+.o_scrollable_container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.o_scrollable_container::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 10px;
+}
+
+.o_action_manager {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.card {
+    border-radius: 1rem;
+}

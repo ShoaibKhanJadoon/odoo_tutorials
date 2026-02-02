@@ -1,0 +1,114 @@
+<template xml:space="preserve">
+    <t t-name="clicker_game.ClickerClientAction">
+    <div class="o_clicker_client_action o_scrollable_container p-3">
+
+        <!-- Header -->
+        <div class="card shadow-lg border-0 mb-4">
+            <div class="card-body text-center">
+                <h2 class="text-primary mb-3">Clicker Game</h2>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <button class="btn btn-lg btn-primary" t-on-click="increment">+</button>
+                    <ClickValue/>
+                </div>
+                <p class="text-muted mt-2">Level: <t t-out="clicker.state.level"/></p>
+            </div>
+        </div>
+
+        <!-- YOUR CUSTOM NOTEBOOK -->
+        <Notebook className="'shadow-sm border-0'">
+
+            <!-- TAB 1: Clicks & Bots -->
+            <t t-set-slot="clicks" title="'Clicks &amp; Bots'" isVisible="true">
+                <div class="p-3">
+
+                    <!-- ClickBots -->
+                    <div class="card mb-3">
+                        <div class="card-body text-center">
+                            <h4 class="text-success mb-3">ClickBots</h4>
+                            <p>Owned: <strong><t t-out="clicker.state.clickBots"/></strong></p>
+                            <button class="btn btn-success"
+                                    t-on-click="buyBot"
+                                    t-att-disabled="!canBuyBot">
+                                Buy (1 000 clicks)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- BigBots -->
+                    <div class="card mb-3">
+                        <div class="card-body text-center">
+                            <h4 class="text-primary mb-3">BigBots</h4>
+                            <p>Owned: <strong><t t-out="clicker.state.bigBots"/></strong></p>
+                            <button class="btn btn-primary"
+                                    t-on-click="buyBigBot"
+                                    t-att-disabled="!canBuyBigBot">
+                                Buy (5 000 clicks)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Power -->
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h4 class="text-danger mb-3">Power</h4>
+                            <p>Power: <t t-out="clicker.state.power"/></p>
+                            <button class="btn btn-danger"
+                                    t-on-click="buyPower"
+                                    t-att-disabled="!canBuyPower">
+                                Upgrade (50 000 clicks)
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </t>
+
+            <!-- TAB 2: Trees & Fruits -->
+            <t t-set-slot="trees" title="'Trees &amp; Fruits'" isVisible="true">
+                <div class="p-3">
+
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h4 class="text-success mb-3">Trees</h4>
+
+                            <p class="mb-2">
+                                Pear Trees: <strong><t t-out="clicker.state.pearTrees"/></strong> |
+                                Cherry Trees: <strong><t t-out="clicker.state.cherryTrees"/></strong> |
+                                Peach Trees: <strong><t t-out="clicker.state.peachTrees"/></strong>
+
+                            </p>
+
+                            <p class="mb-3">
+                                Pears: <t t-out="clicker.state.pears"/> |
+                                Cherries: <t t-out="clicker.state.cherries"/> |
+                                Peaches: <t t-out="clicker.state.peaches"/> 
+
+                            </p>
+
+                            <div class="d-flex justify-content-center gap-2">
+                                <button class="btn btn-success"
+                                        t-on-click="buyPearTree"
+                                        t-att-disabled="!canBuyTree">
+                                    Buy Pear Tree (1M clicks)
+                                </button>
+                                <button class="btn btn-danger"
+                                        t-on-click="buyCherryTree"
+                                        t-att-disabled="!canBuyTree">
+                                    Buy Cherry Tree (1M clicks)
+                                </button>
+                                <button class="btn btn-danger"
+                                        t-on-click="buyPeachTree"
+                                        t-att-disabled="!canBuyTree">
+                                    Buy Peach Tree (1M clicks)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </t>
+
+        </Notebook>
+    </div>
+</t>
+</template>
